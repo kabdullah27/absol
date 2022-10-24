@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('mt_positions', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->int('position_parent_id')->nullable();
+            $table->integer('position_parent_id')->nullable();
             $table->integer('position_level');
             $table->string('position_name', 50);
             $table->boolean('is_active')->default(true);
