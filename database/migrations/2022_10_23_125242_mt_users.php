@@ -26,7 +26,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->timestamps();
-            $table->unsignedBigInteger('modifed_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
             $table->string('timezone')->default(config('app.timezone'));
         });
     }

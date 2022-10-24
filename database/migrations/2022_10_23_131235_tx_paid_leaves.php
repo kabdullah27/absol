@@ -23,7 +23,7 @@ return new class extends Migration
             $table->boolean('is_active')->default(true);
             $table->unsignedBigInteger('created_by');
             $table->timestamps();
-            $table->unsignedBigInteger('modifed_by');
+            $table->unsignedBigInteger('updated_by');
         });
     }
 

@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('attendance_lat_check_out', 50);
             $table->unsignedBigInteger('created_by');
             $table->timestamps();
-            $table->unsignedBigInteger('modifed_by');
+            $table->unsignedBigInteger('updated_by');
         });
     }
 
