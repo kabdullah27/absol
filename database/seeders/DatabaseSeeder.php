@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             MtStatus::class,
             TxTimeOffs::class,
             MtSchedules::class,
+            MtEmployee::class
         ]);
     }
 }
