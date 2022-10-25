@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignUuid('schedule_id');
             $table->foreignUuid('location_id_check_in')->nullable();
             $table->string('attendance_location_name_check_in', 100)->nullable();
-            $table->string('attendance_desc_check_in', 255);
+            $table->string('attendance_desc_check_in', 255)->nullable();
             $table->timestamp('attendance_date_check_in')->nullable();
             $table->string('attendance_long_check_in', 50);
             $table->string('attendance_lat_check_in', 50);

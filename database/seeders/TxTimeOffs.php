@@ -14,7 +14,7 @@ class TxTimeOffs extends Seeder
      */
     public function run()
     {
-        DB::table('tx_time_off')->insert([
+        DB::table('tx_time_offs')->insert([
             'id' => '881a4175-5833-445a-8daf-e81607b82a68',
             'time_off_desc' => 'Healing Coy',
             'time_off_date' => '2022-11-04',
