@@ -85,14 +85,14 @@ return new class extends Migration
             $table->foreign('updated_by')->references('id')->on('users');
         });
 
-        Schema::table('mt_paid_leave_types', function ($table) {
+        Schema::table('mt_time_off_types', function ($table) {
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users');
         });
 
-        Schema::table('tx_paid_leaves', function ($table) {
-            $table->foreign('paid_leave_pic_id')->references('id')->on('users');
-            $table->foreign('paid_leave_type_id')->references('id')->on('mt_paid_leave_types');
+        Schema::table('tx_time_off', function ($table) {
+            $table->foreign('time_off_pic_id')->references('id')->on('users');
+            $table->foreign('time_off_type_id')->references('id')->on('mt_time_off_types');
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users');
         });

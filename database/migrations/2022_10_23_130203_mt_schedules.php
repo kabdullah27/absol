@@ -17,7 +17,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->timestamp('schedule_date');
             $table->foreignUuid('shift_id');
-            $table->foreignUuid('holiday_id');
+            $table->foreignUuid('holiday_id')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->boolean('is_active')->default(true);
             $table->unsignedBigInteger('created_by');

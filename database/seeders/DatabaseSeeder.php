@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            MtPaidLeaveTypes::class,
+            MtTimeOffTypes::class,
             MtLocations::class,
             MtHolidays::class,
             MtShifts::class,
@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             MtDepartments::class,
             MtPositions::class,
             MtStatus::class,
-            TxPaidLeaves::class,
+            TxTimeOffs::class,
             MtSchedules::class,
         ]);
     }

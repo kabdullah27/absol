@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mt_paid_leave_types', function (Blueprint $table) {
+        Schema::create('tx_time_offs', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('paid_leave_name', 100);
+            $table->string('time_off_desc', 100)->nullable();
+            $table->timestamp('time_off_date');
+            $table->uuid('time_off_type_id')->nullable();
+            $table->integer('time_off_pic_id');
+            $table->jsonb('time_off_line_approve');
             $table->boolean('is_active')->default(true);
             $table->unsignedBigInteger('created_by');
             $table->timestamps();
@@ -30,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mt_paid_leave_types');
+        Schema::dropIfExists('tx_time_offs');
     }
 };

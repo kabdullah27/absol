@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('shift_name', 100);
             $table->time('shift_start');
             $table->time('shift_end');
+            $table->time('shift_late')->nullable();
             $table->boolean('is_active')->default(true);
             $table->unsignedBigInteger('created_by');
             $table->timestamps();

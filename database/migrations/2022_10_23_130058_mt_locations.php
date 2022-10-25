@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('mt_locations', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('location_name', 100);
-            $table->string('location_long', 50);
-            $table->string('location_lat', 50);
+            $table->string('location_long', 50)->nullable();
+            $table->string('location_lat', 50)->nullable();
             $table->boolean('is_active')->default(true);
             $table->unsignedBigInteger('created_by');
             $table->timestamps();
