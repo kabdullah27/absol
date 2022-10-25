@@ -8,8 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class MtBankAccount extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'id';
+    protected $keyType = 'string';
+    public $incrementing = false;
 
     public function employee(){
-        return  $this->hasMany('App\MtEmployee');
+        return  $this->hasMany('App\Models\MtEmployee');
     }
 }

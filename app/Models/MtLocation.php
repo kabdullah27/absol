@@ -8,8 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class MtLocation extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'id';
+    protected $keyType = 'string';
+    public $incrementing = false;
 
     public function attendance(){
-        return  $this->hasMany('App\MtAttendance');
+        return  $this->hasMany('App\Models\MtAttendance');
     }
 }
