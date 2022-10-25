@@ -13,7 +13,7 @@ class MtEmployee extends Model
     public $incrementing = false;
 
     public function user(){
-        return  $this->belongsTo('App\Models\User');
+        return  $this->hasOne('App\Models\User');
     }
 
     public function bank_account(){
