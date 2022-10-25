@@ -16,10 +16,6 @@ class User extends \Laravolt\Platform\Models\User
     use HasFactory;
     use Notifiable;
 
-    protected $primaryKey = 'id';
-    protected $keyType = 'string';
-    public $incrementing = false;
-
     /**
      * @var array<int, string>
      */
@@ -28,7 +24,7 @@ class User extends \Laravolt\Platform\Models\User
     protected $fillable = ['name', 'email', 'username', 'password', 'status', 'timezone'];
 
     public function employee(){
-        return  $this->hasOne('App\Models\MtEmployee');
+        return  $this->belongsTo('App\Models\MtEmployee');
     }
 
     public function attendance(){
