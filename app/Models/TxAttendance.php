@@ -3,12 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\TraitUuid;
 
 class TxAttendance extends Model
 {
-    protected $primaryKey = 'id';
-    protected $keyType = 'string';
-    public $incrementing = false;
+    use TraitUuid;
 
     public function user(){
         return  $this->belongsTo('App\Models\User');

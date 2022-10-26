@@ -2,15 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\TraitUuid;
 
 class MtEmployee extends Model
 {
-    use HasFactory;
-    protected $primaryKey = 'id';
-    protected $keyType = 'string';
-    public $incrementing = false;
+    use TraitUuid;
 
     public function user(){
         return  $this->hasOne('App\Models\User');
