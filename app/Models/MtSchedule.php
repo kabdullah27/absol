@@ -2,16 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\TraitUuid;
 
 class MtSchedule extends Model
 {
-    use HasFactory;
-
-    protected $primaryKey = 'id';
-    protected $keyType = 'string';
-    public $incrementing = false;
+    use TraitUuid;
 
     public function attendance(){
         return  $this->hasMany('App\Models\MtAttendance');

@@ -1,7 +1,7 @@
 <x-volt-app title="List Attendance">
 
     <x-slot name="actions">
-        <x-volt-link-button :label="__('Checkin')" url="{{ route('attendance.create') }}" icon="plus">
+        <x-volt-link-button :label="__($title)" url="{{ route('attendance.create') }}" icon="plus">
         </x-volt-link-button>
     </x-slot>
 
@@ -27,9 +27,9 @@
                 <td>{{ $data->attendance_date_check_in }}</td>
                 <td>{{ $data->schedule->shift->shift_name }}</td>
                 <td>{{ $data->location_checkin->location_name }}</td>
-                <td>{{ $data->attendace_desc_check_in }}</td>
+                <td>{{ $data->attendance_desc_check_in }}</td>
                 <td>{{ $data->attendance_date_check_out }}</td>
-                <td>{{ $data->attendace_desc_check_out }}</td>
+                <td>{{ $data->attendance_desc_check_out }}</td>
             </tr>
         @endforeach
     </table>
