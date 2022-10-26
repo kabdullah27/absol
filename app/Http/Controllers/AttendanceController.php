@@ -25,7 +25,7 @@ class AttendanceController extends Controller
 
         $title = (!$filter_user) ? 'Checkin' : 'Checkout';
 
-        return view('attendance.index', compact('datas', 'title'));
+        return view('attendance.index', compact('datas', 'title', 'filter_user'));
     }
 
     public function create(): View
@@ -36,7 +36,7 @@ class AttendanceController extends Controller
             ->where('user_id', $user->id)
             ->first();
 
-        $title = (!$datas == 0) ? 'Checkin' : 'Checkout';
+        $title = (!$datas) ? 'Checkin' : 'Checkout';
 
         return view('attendance.create', compact('user', 'title'));
     }

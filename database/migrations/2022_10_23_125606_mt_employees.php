@@ -25,7 +25,7 @@ return new class extends Migration
             $table->foreignUuid('bank_account_id', 50);
             $table->string('employee_bank_account_number', 50);
             $table->string('employee_place_of_birth', 50)->nullable();
-            $table->timestamp('employee_date_of_birth');
+            $table->timestamp('employee_date_of_birth')->nullable();
             $table->foreignUuid('religion_id');
             $table->string('employee_address', 255);
             $table->string('employee_handphone_number', 30);
