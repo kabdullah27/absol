@@ -1,8 +1,13 @@
 <x-volt-app title="List Attendance">
 
     <x-slot name="actions">
-        <x-volt-link-button :label="__($title)" url="{{ route('attendance.create') }}" icon="plus">
-        </x-volt-link-button>
+        @if (!isset($filter_user->attendance_date_check_out))
+            <x-volt-link-button :label="__($title)" url="{{ route('attendance.create') }}" icon="plus">
+            </x-volt-link-button>
+        @else
+            <x-volt-button :label="__('Selesai')" readonly>
+            </x-volt-button>
+        @endif
     </x-slot>
 
     {{-- @livewire(\App\Http\Livewire\Table\Attendance::class)  --}}
@@ -20,9 +25,9 @@
                 <th>Leave Out Desc</th>
             </tr>
         </thead>
-        @foreach($datas as $key=>$data)
+        @foreach ($datas as $key => $data)
             <tr>
-                <td>{{ $key+1 }}</td>
+                <td>{{ $key + 1 }}</td>
                 <td>{{ $data->user->employee->employee_name }}</td>
                 <td>{{ $data->attendance_date_check_in }}</td>
                 <td>{{ $data->schedule->shift->shift_name }}</td>
@@ -33,5 +38,5 @@
             </tr>
         @endforeach
     </table>
-    
+
 </x-volt-app>
