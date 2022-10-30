@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
 use Laravolt\AutoCrud\Requests\CrudRequest;
 use Laravolt\AutoCrud\SchemaTransformer;
+use Carbon\Carbon;
 
 class ResourceController extends Controller
 {
@@ -31,7 +32,12 @@ class ResourceController extends Controller
     public function store(CrudRequest $request, string $resource)
     {
         $config = $request->getConfig();
-        app($config['model'])->create($request->data());
+        $data = $request->data();
+
+        $data['created_by'] = auth()->user()->id;
+        $data['updated_by'] = auth()->user()->id;
+        
+        app($config['model'])->create($data);
 
         return redirect()
             ->route('auto-crud::resource.index', $resource)
@@ -61,7 +67,12 @@ class ResourceController extends Controller
         $config = $request->getConfig();
         $model = app($config['model'])->findOrFail($id);
 
-        $model->update($request->data());
+        $data = $request->data();
+
+        $data['updated_at'] = Carbon::now()->toDateTimeString();
+        $data['updated_by'] = auth()->user()->id;
+
+        $model->update($data);
 
         return redirect()
             ->route('auto-crud::resource.index', $resource)
