@@ -11,7 +11,6 @@
 1. Salin .env.example ke .env
 1. Sesuaikan konfigurasi database dan lain-lain
 1. Jalankan 'php artisan key:generate'
-1. Jalankan 'php artisan laravolt:admin admin admin@admin.com admin' untuk membuat user
 1. Jalankan 'php artisan migrate:fresh --seed'
 1. Jalankan 'php artisan storage:link'
 1. Jalankan 'php artisan vendor:publish --tag=laravolt-assets'
@@ -19,3 +18,4 @@
     1. bootstrap/cache
     1. storage
 1. Jalankan 'php artisan serve'
+1. Untuk login silahkan menggunakan email admin@admin.com dengan password admin
