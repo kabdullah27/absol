@@ -13,5 +13,5 @@ class MtLocation extends Model
         return  $this->hasMany('App\Models\MtAttendance');
     }
 
-    protected $fillable = ['location_name', 'location_long', 'location_lat', 'is_active'];
+    protected $fillable = ['location_name', 'location_long', 'location_lat', 'is_active', 'created_by', 'updated_by'];
 }
