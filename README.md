@@ -19,3 +19,8 @@
     1. storage
 1. Jalankan 'php artisan serve'
 1. Untuk login silahkan menggunakan email admin@admin.com dengan password admin
+
+## Keterangan Tambahan
+Untuk timeline pengerjaan bisa dilihat di link ini ya 
+https://sharing.clickup.com/42621687/tl/h/18mpqq-62/5e0a0c8ccc010fc
+Jika ada yang ingin request fitur tambahan silahkan dapat membuat issue ya
