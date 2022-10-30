@@ -1,4 +1,8 @@
 <x-volt-app :title="__($title)">
+    <x-slot name="actions">
+        <x-volt-backlink url="{{ route('attendance.index') }}">Kembali ke Index
+        </x-volt-backlink>
+    </x-slot>
     <x-volt-panel title="{{ __($title) }}">
         {!! form()->bind($user)->post()->action(route('attendance.store')) !!}
 

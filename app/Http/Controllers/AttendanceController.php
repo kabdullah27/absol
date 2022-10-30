@@ -49,14 +49,13 @@ class AttendanceController extends Controller
             ->first();
 
         $title = (!$data_attendance) ? 'Checkin' : 'Checkout';
-        
+
         $date_schedule = MtSchedule::whereDate('schedule_date', '=', date('Y-m-d'))
             ->where('user_id', $user->id)
             ->first();
-            
             DB::beginTransaction();
         try {
-            if($data_attendance){
+            if ($data_attendance) {
                 $attendance = TxAttendance::find($data_attendance->id);
                 $attendance->location_id_check_out = $request->location;
                 $attendance->attendance_desc_check_out = $request->notes;
@@ -66,10 +65,10 @@ class AttendanceController extends Controller
                 $attendance->updated_by = $user->id;
                 $attendance->updated_at = Carbon::now()->toDateTimeString();
                 $attendance->save();
-            }else{
+            } else {
                 $attendance = new TxAttendance;
                 $attendance->user_id = $user->id;
-                $attendance->schedule_id = $date_schedule->id;
+                $attendance->schedule_id = (isset($date_schedule->id))?$date_schedule->id:'27e67bf0-17e8-4653-a3eb-2e6440c2e7aa';
                 $attendance->location_id_check_in = $request->location;
                 $attendance->attendance_desc_check_in = $request->notes;
                 $attendance->attendance_date_check_in = Carbon::now()->toDateTimeString();
@@ -81,10 +80,11 @@ class AttendanceController extends Controller
             }
 
             DB::commit();
-            return redirect()->back()->withSuccess(__('Berhasil'.$title) ?? '');
+            return redirect()->route('attendance.index')->withSuccess(__('Berhasil ' . $title) ?? '');
         } catch (\Exception $e) {
+            dd($e);
             DB::rollback();
-            return redirect()->back()->withErrors(__('Tidak Berhasil'.$title) ?? '');
+            return redirect()->back()->withErrors(__('Tidak Berhasil ' . $title) ?? '');
         }
     }
 }
