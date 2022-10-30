@@ -1,1 +1,0 @@
-{!! \Illuminate\Foundation\Inspiring::quote() !!}
