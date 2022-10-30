@@ -15,6 +15,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            Users::class,
+            AclRoles::class,
+            AclRoleUser::class,
+            AclPermission::class,
+            AclPermissionRole::class,
             MtTimeOffTypes::class,
             MtLocations::class,
             MtHolidays::class,
@@ -26,7 +31,8 @@ class DatabaseSeeder extends Seeder
             MtStatus::class,
             TxTimeOffs::class,
             MtSchedules::class,
-            MtEmployee::class
+            MtEmployee::class,
+            UpdateUserEmployee::class
         ]);
     }
 }
