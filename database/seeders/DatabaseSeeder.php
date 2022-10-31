@@ -32,7 +32,8 @@ class DatabaseSeeder extends Seeder
             TxTimeOffs::class,
             MtSchedules::class,
             MtEmployee::class,
-            UpdateUserEmployee::class
+            UpdateUserEmployee::class,
+            MtRelationship::class
         ]);
     }
 }

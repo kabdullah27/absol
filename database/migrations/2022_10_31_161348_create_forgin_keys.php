@@ -96,6 +96,18 @@ return new class extends Migration
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users');
         });
+
+        Schema::table('mt_emergency_contacts', function ($table) {
+            $table->foreign('relationship_id')->references('id')->on('mt_relationships');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->foreign('updated_by')->references('id')->on('users');
+        });
+
+        Schema::table('mt_families', function ($table) {
+            $table->foreign('family_relationship_id')->references('id')->on('mt_relationships');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->foreign('updated_by')->references('id')->on('users');
+        });
     }
 
     /**
