@@ -9,6 +9,12 @@ class MtRelationship extends Model
 {
     use TraitUuid;
 
+    public function display()
+    {
+        //menampilkan data dari kolom nama
+        return $this->relationship_name;
+    }
+
     public function emergency_contact(){
         return  $this->hasMany('App\Models\MtEmergencyContact');
     }
