@@ -12,4 +12,6 @@ class MtBankAccount extends Model
     public function employee(){
         return  $this->hasMany('App\Models\MtEmployee');
     }
+
+    protected $fillable = ['bank_account_name', 'is_active', 'created_by', 'updated_by', 'deleted_at'];
 }
