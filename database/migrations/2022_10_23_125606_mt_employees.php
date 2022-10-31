@@ -29,8 +29,8 @@ return new class extends Migration
             $table->foreignUuid('religion_id');
             $table->string('employee_address', 255);
             $table->string('employee_handphone_number', 30);
-            $table->string('employee_gender', 10);
-            $table->string('employee_marital_status', 10)->nullable();
+            $table->enum('employee_gender', ['male', 'female']);
+            $table->enum('employee_marital_status', ['single', 'married', 'widow', 'widower'])->nullable();
             $table->foreignUuid('department_id');
             $table->foreignUuid('position_id');
             $table->timestamp('employee_join_date');
