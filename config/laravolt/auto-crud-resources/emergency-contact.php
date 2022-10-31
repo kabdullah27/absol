@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'label' => 'Emergency Contact',
+    'label' => 'kontak Darurat',
     'model' => \App\Models\MtEmergencyContact::class,
 
     // optional, if you want to override the default Table
