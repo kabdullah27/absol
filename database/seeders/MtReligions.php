@@ -14,7 +14,7 @@ class MtReligions extends Seeder
      */
     public function run()
     {
-        DB::table('mt_religions')->insert(
+        DB::table('mt_religions')->insert([
             [   
                 'id' => '1adcb7c6-2d9b-42cb-817d-ceedde7867fa',
                 'religion_name' => 'ISLAM',
@@ -57,6 +57,6 @@ class MtReligions extends Seeder
                 'created_by' => 1,
                 'updated_by' => 1
             ]
-        );
+        ]);
     }
 }
