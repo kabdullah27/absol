@@ -9,7 +9,11 @@ class MtStatus extends Model
 {
     use TraitUuid;
 
+    protected $table = 'mt_status';
+
     public function employee(){
         return  $this->hasMany('App\Models\MtEmployee');
     }
+
+    protected $fillable = ['status_name', 'is_active', 'created_by', 'updated_by', 'deleted_at'];
 }
