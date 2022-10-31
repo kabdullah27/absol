@@ -9,14 +9,6 @@ return [
 
     'schema' => [
         [
-            'name' => 'created_by',
-            'type' => \Laravolt\Fields\Field::HIDDEN,
-        ],
-        [
-            'name' => 'updated_by',
-            'type' => \Laravolt\Fields\Field::HIDDEN,
-        ],
-        [
             'name' => 'holiday_date',
             'type' => \Laravolt\Fields\Field::DATE_PICKER,
             'label' => 'Tanggal Libur',
