@@ -12,4 +12,6 @@ class MtEmergencyContact extends Model
     public function relationship(){
         return  $this->belongsTo('App\Models\MtRelationship');
     }
+
+    protected $fillable = ['name', 'relationship_id', 'phone_number', 'is_active', 'created_by', 'updated_by', 'deleted_at'];
 }

@@ -14,7 +14,7 @@ class MtRelationship extends Seeder
      */
     public function run()
     {
-        DB::table('mt_relationships')->insert(
+        DB::table('mt_relationships')->insert([
             [   
                 'id' => '6f8035a9-e0d0-4555-8675-7ec62a1bab0f',
                 'relationship_name' => 'Father',
@@ -99,6 +99,6 @@ class MtRelationship extends Seeder
                 'created_by' => 1,
                 'updated_by' => 1
             ]
-        );
+        ]);
     }
 }
