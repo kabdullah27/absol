@@ -11,6 +11,12 @@ class MtStatus extends Model
 
     protected $table = 'mt_status';
 
+    public function display()
+    {
+        //menampilkan data dari kolom nama
+        return $this->status_name;
+    }
+
     public function employee(){
         return  $this->hasMany('App\Models\MtEmployee');
     }
