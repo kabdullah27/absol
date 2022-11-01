@@ -9,8 +9,14 @@ class MtEmployee extends Model
 {
     use TraitUuid;
 
+    public function display()
+    {
+        //menampilkan data dari kolom nama
+        return $this->name;
+    }
+
     public function user(){
-        return  $this->hasOne('App\Models\User');
+        return  $this->hasOne('App\Models\User' , 'employee_id');
     }
 
     public function bank_account(){
@@ -23,6 +29,10 @@ class MtEmployee extends Model
 
     public function department(){
         return  $this->belongsTo('App\Models\MtDepartment');
+    }
+
+    public function position(){
+        return  $this->belongsTo('App\Models\MtPosition');
     }
 
     public function status(){

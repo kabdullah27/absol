@@ -9,6 +9,12 @@ class MtDepartment extends Model
 {
     use TraitUuid;
 
+    public function display()
+    {
+        //menampilkan data dari kolom nama
+        return $this->department_name;
+    }
+
     public function employee(){
         return  $this->hasMany('App\Models\MtEmployee');
     }
