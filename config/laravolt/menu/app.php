@@ -6,9 +6,6 @@ return [
             'Attendance' => [
                 'route' => 'attendance.index',
             ],
-            'Users' => [
-                'route' => 'users.index',
-            ],
         ],
     ],
 ];
