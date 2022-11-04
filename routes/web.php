@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Home;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\AccountController;
 use App\Http\Controllers\User\Password\Generate;
@@ -20,6 +21,10 @@ Route::middleware(['auth', 'verified'])
             Route::get('attendance', [AttendanceController::class, 'index'])->name('attendance.index');
             Route::get('attendance/create', [AttendanceController::class, 'create'])->name('attendance.create');
             Route::post('attendance', [AttendanceController::class, 'store'])->name('attendance.store');
+
+            // Schedule
+            Route::resource('schedule', ScheduleController::class)->only('index', 'create');
+            Route::post('schedule/import_excel',[ScheduleController::class,'import_excel'])->name('schedule.import_excel');
 
             Route::middleware('can:'.Permission::MANAGE_USER)
             ->group(
