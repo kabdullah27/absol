@@ -16,7 +16,7 @@
     1. bootstrap/cache
     1. storage
 1. Jalankan 'php artisan serve'
-1. Untuk login silahkan menggunakan email admin@admin.com dengan password admin
+1. Untuk login silahkan menggunakan username admin dengan password admin
 
 ## Keterangan Tambahan
 1. Untuk timeline pengerjaan bisa dilihat di link ini ya 
