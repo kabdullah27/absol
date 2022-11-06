@@ -17,6 +17,7 @@
     1. storage
 1. Jalankan 'php artisan serve'
 1. Untuk login silahkan menggunakan username admin dengan password admin
+1. Untuk menghindari error saat pengambilan location bisa baca" disini https://stackoverflow.com/questions/41373166/why-am-i-seeing-error-only-secure-origins-are-allowed-for-my-service-worker
 
 ## Keterangan Tambahan
 1. Untuk timeline pengerjaan bisa dilihat di link ini ya 
