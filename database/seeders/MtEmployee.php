@@ -16,7 +16,7 @@ class MtEmployee extends Seeder
     {
         DB::table('mt_employees')->insert([
             'id' => '308bb004-73ef-478d-a9d1-0193a949742d',
-            'employee_name' => 'Agus',
+            'employee_name' => 'Susanto',
             'employee_identity_type' => 'KTP',
             'employee_identity_number' => '123332123',
             'employee_npwp' => '12312123',

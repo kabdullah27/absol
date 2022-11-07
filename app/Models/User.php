@@ -34,4 +34,8 @@ class User extends \Laravolt\Platform\Models\User
     public function schedule(){
         return  $this->hasMany('App\Models\MtSchedule');
     }
+
+    public function upload_schedule(){
+        return  $this->hasMany('App\Models\MtUploadSchedule');
+    }
 }

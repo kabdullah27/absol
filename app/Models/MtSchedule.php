@@ -21,7 +21,13 @@ class MtSchedule extends Model
         return  $this->belongsTo('App\Models\MtHoliday');
     }
 
+    public function upload_schedule(){
+        return  $this->belongsTo('App\Models\MtUploadSchedule');
+    }
+
     public function user(){
         return  $this->belongsTo('App\Models\User');
     }
+
+    protected $fillable = ['upload_schedule_id', 'schedule_date', 'shift_id', 'user_id', 'created_by', 'updated_by'];
 }
