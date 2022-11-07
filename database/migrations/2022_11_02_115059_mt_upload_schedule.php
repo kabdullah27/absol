@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('mt_upload_schedules', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->timestamp('upload_schedule_date');
-            $table->string('upload_schdule_notes');
+            $table->string('upload_schedule_notes')->nullable();
             $table->unsignedBigInteger('created_by');
             $table->timestamps();
             $table->unsignedBigInteger('updated_by');
