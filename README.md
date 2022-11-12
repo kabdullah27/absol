@@ -20,6 +20,4 @@
 1. Untuk menghindari error saat pengambilan location bisa baca" disini https://stackoverflow.com/questions/41373166/why-am-i-seeing-error-only-secure-origins-are-allowed-for-my-service-worker
 
 ## Keterangan Tambahan
-1. Untuk timeline pengerjaan bisa dilihat di link ini ya 
-https://sharing.clickup.com/42621687/tl/h/18mpqq-62/5e0a0c8ccc010fc
 1. Jika ada yang ingin request fitur tambahan silahkan dapat membuat issue ya
