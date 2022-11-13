@@ -24,8 +24,8 @@ return new class extends Migration
             $table->softDeletes();
         });
 
-        Schema::table('approve_line_user_id', function (Blueprint $table) {
-            $table->foreign('approve_line_user')->references('id')->on('users');
+        Schema::table('mt_approve_lines', function (Blueprint $table) {
+            $table->foreign('approve_line_user_id')->references('id')->on('users');
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users');
         });

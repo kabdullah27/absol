@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tx_time_offs', function (Blueprint $table) {
+        Schema::create('tx_request_time_offs', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->unsignedBigInteger('time_off_user_id')->nullable();
             $table->string('time_off_desc', 100)->nullable();
-            $table->timestamp('time_off_date');
-            $table->uuid('time_off_type_id')->nullable();
+            $table->date('time_off_start_date');
+            $table->date('time_off_end_date');
+            $table->foreignUuid('time_off_type_id')->nullable();
             $table->unsignedBigInteger('time_off_pic_id')->nullable();
             $table->jsonb('time_off_line_approve');
             $table->boolean('is_active')->default(true);
@@ -35,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tx_time_offs');
+        Schema::dropIfExists('tx_request_time_offs');
     }
 };

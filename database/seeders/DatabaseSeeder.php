@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             MtDepartments::class,
             MtPositions::class,
             MtStatus::class,
-            TxTimeOffs::class,
+            TxRequestTimeOffs::class,
             MtSchedules::class,
             MtEmployee::class,
             UpdateUserEmployee::class,

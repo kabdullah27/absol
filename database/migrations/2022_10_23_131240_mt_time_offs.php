@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mt_time_off_types', function (Blueprint $table) {
+        Schema::create('mt_time_offs', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('time_off_desc', 255);
-            $table->boolean('is_reduce_time_off')->default(true);
+            $table->unsignedBigInteger('time_off_user_id')->nullable();
+            $table->integer('time_off_total')->nullable();
+            $table->string('time_off_desc', 100)->nullable();
+            $table->date('time_off_start_date')->nullable();
+            $table->date('time_off_end_date')->nullable();
             $table->boolean('is_active')->default(true);
             $table->unsignedBigInteger('created_by');
             $table->timestamps();
@@ -32,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mt_time_off_types');
+        Schema::dropIfExists('mt_time_offs');
     }
 };
