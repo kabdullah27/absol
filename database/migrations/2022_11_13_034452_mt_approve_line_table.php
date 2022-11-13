@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('mt_approve_lines', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->unsignedBigInteger('approve_line_user_id')->nullable();
             $table->string('approve_line_desc')->nullable();
             $table->enum('approve_line_type', ['request_time_off', 'reimbursement']);
             $table->unsignedBigInteger('created_by');
@@ -23,8 +24,7 @@ return new class extends Migration
             $table->softDeletes();
         });
 
-        Schema::table('mt_approve_lines', function (Blueprint $table) {
-            $table->unsignedBigInteger('approve_line_user')->nullable()->after('id')->index();
+        Schema::table('approve_line_user_id', function (Blueprint $table) {
             $table->foreign('approve_line_user')->references('id')->on('users');
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users');
@@ -39,9 +39,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('mt_approve_lines');
-
-        Schema::table('mt_approve_lines', function (Blueprint $table) {
-            $table->dropColumn(['approve_line_user']);
-        });
     }
 };
