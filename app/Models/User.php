@@ -23,6 +23,12 @@ class User extends \Laravolt\Platform\Models\User
 
     protected $fillable = ['name', 'email', 'username', 'password', 'status', 'timezone'];
 
+    public function display()
+    {
+        //menampilkan data dari kolom nama
+        return $this->name;
+    }
+
     public function employee(){
         return  $this->belongsTo('App\Models\MtEmployee');
     }
@@ -37,5 +43,9 @@ class User extends \Laravolt\Platform\Models\User
 
     public function upload_schedule(){
         return  $this->hasMany('App\Models\MtUploadSchedule');
+    }
+
+    public function approve_line(){
+        return  $this->hasMany('App\Models\MtApproveLine');
     }
 }
