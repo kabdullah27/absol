@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'label' => 'Garis Persetujuan',
+    'label' => 'Persetujuan Atasan',
     'model' => \App\Models\MtApproveLine::class,
     // 'table' => \App\Http\Livewire\Table\LocationTable::class,
 
