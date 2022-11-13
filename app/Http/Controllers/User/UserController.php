@@ -12,6 +12,8 @@ use Laravolt\Epicentrum\Mail\AccountInformation;
 use Laravolt\Epicentrum\Repositories\RepositoryInterface;
 use Laravolt\Platform\Models\User;
 use Laravolt\Support\Contracts\TimezoneRepository;
+use Illuminate\Support\Carbon;
+use App\Models\MtEmployee;
 
 class UserController extends Controller
 {
@@ -69,16 +71,24 @@ class UserController extends Controller
     public function store(Store $request)
     {
         $this->authorize('create', User::class);
+        $data = $request->all();
+        //assign user_code with username
+        $data['user_code'] = $data['name'];
 
+        $data['email_verified_at'] = Carbon::now()->toDateTimeString();
+        
+        //change name get from employee
+        $data['name'] = MtEmployee::where('id', $data['employee_id'])->first()->employee_name;
+        
         // save to db
         $roles = $request->get('roles', []);
-        $user = $this->repository->createByAdmin($request->all(), $roles);
-        $password = $request->get('password');
+        $this->repository->createByAdmin($data, $roles);
+        // $password = $request->get('password');
 
         // send account info to email
-        if ($request->has('send_account_information')) {
+        /* if ($request->has('send_account_information')) {
             Mail::to($user)->send(new AccountInformation($user, $password));
-        }
+        } */
 
         return redirect()->route('users.index')->withSuccess(trans('laravolt::message.user_created'));
     }
