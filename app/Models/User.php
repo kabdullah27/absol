@@ -48,4 +48,12 @@ class User extends \Laravolt\Platform\Models\User
     public function approve_line(){
         return  $this->hasMany('App\Models\MtApproveLine');
     }
+
+    public function request_time_off(){
+        return  $this->hasMany('App\Models\TxRequestTimeOff', 'time_off_user_id');
+    }
+
+    public function time_off(){
+        return  $this->hasMany('App\Models\MtTimeOff', 'time_off_user_id');
+    }
 }

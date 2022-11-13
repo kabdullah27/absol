@@ -10,8 +10,8 @@ class MtApproveLine extends Model
     use TraitUuid;
 
     public function user(){
-        return  $this->belongsTo('App\Models\User', 'approve_line_user');
+        return  $this->belongsTo('App\Models\User', 'approve_line_user_id');
     }
 
-    protected $fillable = ['approve_line_user', 'approve_line_desc', 'approve_line_type', 'is_active', 'created_by', 'updated_by'];
+    protected $fillable = ['approve_line_user_id', 'approve_line_desc', 'approve_line_type', 'is_active', 'created_by', 'updated_by'];
 }
