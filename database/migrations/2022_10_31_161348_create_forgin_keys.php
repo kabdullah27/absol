@@ -44,7 +44,6 @@ return new class extends Migration
 
         Schema::table('mt_schedules', function ($table) {
             $table->foreign('shift_id')->references('id')->on('mt_shifts');
-            $table->foreign('holiday_id')->references('id')->on('mt_holidays');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users');
