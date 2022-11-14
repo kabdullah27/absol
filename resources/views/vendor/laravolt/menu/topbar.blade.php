@@ -10,6 +10,18 @@
     </div>
 
     <div class="menu right p-r-1" id="userbar">
+        <div class="item">
+            <div class="ui compact menu b-0">
+                <div class="ui simple dropdown basic button top right pointing b-0 p-x-volt-0">
+                    <x-volt-icon name="bells"></x-volt-icon>
+                    <i class="dropdown icon m-l-0"></i>
+                    <div class="menu">
+                        <a class="item">Total Absen Hari Ini</a>
+                        <a class="item">Total Yang Belum Absen</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         @auth
             <div class="item">
                 <div class="ui compact menu b-0">
